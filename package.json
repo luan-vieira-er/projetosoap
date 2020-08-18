@@ -1,0 +1,15 @@
+{
+  "name": "projeto-soap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luan Vieira",
+  "license": "ISC",
+  "dependencies": {
+    "soap": "^0.32.0",
+    "strong-soap": "^2.0.0"
+  }
+}
