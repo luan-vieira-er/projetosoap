@@ -2,10 +2,27 @@
   <html>
   <head>
        <link rel="stylesheet" type="text/css" href="css/style.css">
-       <title>My web server</title>
+       <title>Server SOAP</title>
   </head>
   <body>
-       <h1>Index</h1>
-       Go to <a href="teste.html">test</a>
+       <h1>Pi Estimado</h1>
   </body>
   </html>
+
+  <script>
+       //Go to <a href="teste.html">test</a>
+       let titulo = document.querySelector('h1')
+       titulo.textContent = "Pi Estimado: " + getPi()
+
+function getPi(){
+    var n = 10000000, inside = 0, x, y, z;
+    for (i = 0; i<n; i++){
+        x = Math.random();
+        y = Math.random();
+        if (Math.sqrt(x * x + y * y) <= 1){
+            inside++;
+        }
+    }
+    return 4 * inside / n;
+}
+  </script>

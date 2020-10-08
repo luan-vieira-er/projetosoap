@@ -12,6 +12,9 @@ var http = require('http'),
  server.on('request', onRequest);
 
  function onRequest(req, res) {
+    console.log("Inicializado Server SOAP - Pi Estimado: " + getPi()) ;
+    //res.send("Pi Estimado: " + getPi());
+
   var filename = parse(req.url).pathname,
       fullPath,
       extension;
@@ -19,7 +22,6 @@ var http = require('http'),
   if(filename === '/') {
       filename = defaultIndex;
   }
-
   fullPath = rootFolder + filename;
   extension = filename.substr(filename.lastIndexOf('.') + 1);
 
@@ -35,3 +37,15 @@ var http = require('http'),
       res.end();
   });
  }
+
+ function getPi(){
+    var n = 10000000, inside = 0, x, y, z;
+    for (i = 0; i<n; i++){
+        x = Math.random();
+        y = Math.random();
+        if (Math.sqrt(x * x + y * y) <= 1){
+            inside++;
+        }
+    }
+    return 4 * inside / n;
+}
