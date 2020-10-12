@@ -1,5 +1,5 @@
 process.title = 'WebServerSOAP';
-var args = process.argv,
+var args = process.env.PORT,
 port = args[2] || 7070,
 webServer = require('./server');
 
