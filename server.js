@@ -6,7 +6,7 @@ var http = require('http');
 var myService = {
     ws: {
         pi: {
-            newPi : function(args) {
+            newPi : async function(args) {
                 var n = 10000000, inside = 0, x, y, i;
                 for (i = 0; i<n; i++){
                     x = Math.random();
@@ -16,8 +16,8 @@ var myService = {
                     }
                 }
                 var v = 4 * inside / n;
-                console.log(v);  
-                    return { v };
+                //console.log(v);  
+                return { v };
 
                     
             }
