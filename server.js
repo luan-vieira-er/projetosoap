@@ -31,5 +31,5 @@ var server = http.createServer(function(request,response) {
     response.end("404: Not Found: "+request.url);
 });
 
-server.listen(7070);
+server.listen(process.env.PORT || 7070);
 soap.listen(server, '/myservice', myService, xml);
